@@ -1,2 +1,2 @@
 # JavaScript
-Practice Assignments
+Practice Assignments  for JavaScript Fundamentals sections
