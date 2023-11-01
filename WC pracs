@@ -1,0 +1,45 @@
+## Write a JavaScript code for displaying a digital clock on web page
+```html
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Digital Clock</title>
+    <style>
+        #clock {
+            font-size: 36px;
+            text-align: center;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="clock"></div>
+    <script>
+        function updateClock() {
+            var now = new Date();
+            var hours = now.getHours();
+            var minutes = now.getMinutes();
+            var seconds = now.getSeconds();
+
+            // Pad single digit minutes and seconds with leading zeros
+            minutes = minutes < 10 ? "0" + minutes : minutes;
+            seconds = seconds < 10 ? "0" + seconds : seconds;
+
+            var timeString = hours + ":" + minutes + ":" + seconds;
+
+            // Display the digital clock
+            document.getElementById("clock").innerText = timeString;
+
+            // Call the updateClock function again after 1 second
+            setTimeout(updateClock, 1000);
+        }
+
+        // Call the updateClock function for the first time to display the clock immediately
+        updateClock();
+    </script>
+</body>
+
+</html>
+```
